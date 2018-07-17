@@ -10,8 +10,8 @@ class StoreFront extends Component {
     }
 
     render() {
-        console.log(this.props.products);
-        let productDisplay = this.props.products.map((element, index) => {
+        console.log(this.props);
+        let productDisplay = this.props.products ? this.props.products.map((element, index) => {
             return (
                 <div className="product-container" key={index}>
                     <h2>{element.title}</h2>
@@ -21,7 +21,7 @@ class StoreFront extends Component {
                     <button onClick={() => this.props.addToShoppingCart(element)}>Purchase!</button>
                 </div>
             )
-        })
+        }) : <div>Loading...</div>
         return (
             <div className="storefront-container">
                 {productDisplay}
