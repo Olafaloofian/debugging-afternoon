@@ -14,10 +14,11 @@ class StoreFront extends Component {
     componentDidMount() {
         axios.get("https://practiceapi.devmountain.com/products/")
             .then((response) => {
+                console.log('--------server response', response)
                 this.setState({
-                    products: response
+                    products: response.data
                 })
-            })
+            }).catch((err) => console.log('----------mounting error', err))
     }
 
     render() {

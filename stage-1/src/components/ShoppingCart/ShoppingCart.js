@@ -3,7 +3,8 @@ import './ShoppingCart.css';
 
 class ShoppingCart extends Component {
     constructor(props) {
-        super();
+        super(props);
+        console.log(this.props)
 
         this.state = {
             shoppingCart: this.props.shoppingCart
